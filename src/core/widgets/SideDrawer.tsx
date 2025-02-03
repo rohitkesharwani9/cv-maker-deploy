@@ -8,7 +8,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  height: 100vh;
+  height: 95vh;
   overflow-y: auto;
   width: 380px;
   background: #222;
