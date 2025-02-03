@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+
+        .custom-title-bar {
+            -webkit-app-region: drag; /* Makes the area draggable */
+            background-color: #05fcc5;
+            color: #333;
+            height: 33px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            font-size: 14px;
+            user-select: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .offline-container {
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 50px; /* Space below the title bar */
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        a {
+            color: #0078d7;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #0078d7;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-title-bar">
+        <span class="app-title"><b>CV Maker Pro</b></span>
+    </div>
+    <div class="offline-container">
+        <div class="icon">⚠️</div>
+        <h1>You are offline</h1>
+        <p>It seems you have lost your internet connection. Please check your connection and try again.</p>
+        <p>If this issue persists, visit our <a href="/">homepage</a> when you're back online.</p>
+    </div>
+</body>
+</html>

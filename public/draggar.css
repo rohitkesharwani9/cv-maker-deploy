@@ -1,0 +1,45 @@
+#navbar1{
+    -webkit-app-region: drag; /* Makes the area draggable */
+    background-color: #05fcc5; /* Set the background color */
+    color: #333; /* Text color */
+    height: 33px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 14px;
+    user-select: none;
+    position: fixed; /* Sticks to the top at all times */
+    top: 0; /* Ensures it stays at the top of the viewport */
+    left: 0; /* Aligns to the left of the viewport */
+    width: 100%; /* Spans the full width of the viewport */
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+/* Hide navbar when printing */
+@media print {
+    #navbar1 {
+        display: none;
+    }
+}
+
+#ads1{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+/* Hide ads when printing */
+@media print {
+    #ads1{
+        display: none;
+    }
+}
+
+/* Hide ads when printing */
+@media print {
+    #ads{
+        display: none;
+    }
+}
