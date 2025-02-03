@@ -10,13 +10,13 @@
   "description": "Build your CV easily!",
   "screenshots": [
     {
-      "src": "https://cv.coderobo.org/desktop1.png",
+      "src": "https://cv.coderobo.org/pwa-app/screenshots/desktop1.png",
       "sizes": "1920x1080",
       "type": "image/jpg",
       "form_factor": "wide"
     },
     {
-      "src": "https://cv.coderobo.org/mobile1.png",
+      "src": "https://cv.coderobo.org/pwa-app/screenshots/mobile1.png",
       "sizes": "1080x1920",
       "type": "image/jpg",
       "form_factor": "narrow"
@@ -42,25 +42,25 @@
   },
   "icons": [
     {
-      "src": "https://cv.coderobo.org/512.png",
+      "src": "https://cv.coderobo.org/pwa-app/512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
     },
     {
-      "src": "https://cv.coderobo.org/256.png",
+      "src": "https://cv.coderobo.org/pwa-app/256.png",
       "type": "image/png",
       "sizes": "256x256",
       "purpose": "any"
     },
     {
-      "src": "https://cv.coderobo.org/192.png",
+      "src": "https://cv.coderobo.org/pwa-app/192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "https://cv.coderobo.org/app-maskable.png",
+      "src": "https://cv.coderobo.org/pwa-app/app-maskable.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
