@@ -68,8 +68,8 @@ export function Resume() {
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <ins className="adsbygoogle"
             style={{ display: 'block' }}
-            data-ad-client="ca-pub-XXXXXXXXXXXXXX"
-            data-ad-slot="XXXXXXXXXX"
+            data-ad-client="ca-pub-2305974348753248"
+            data-ad-slot="1051403388"
             data-ad-format="auto"
             data-full-width-responsive="true"></ins>
           <script>
