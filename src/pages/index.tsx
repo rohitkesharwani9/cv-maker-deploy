@@ -50,8 +50,8 @@ const Home: NextPage = () => {
         <ins
           className="adsbygoogle"
           style={{ display: 'block' }}
-          data-ad-client="ca-pub-XXXXXXXXXXXXXXX" // Replace with your AdSense Publisher ID
-          data-ad-slot="XXXXXXXXXX" // Replace with your AdSense ad slot ID
+          data-ad-client="ca-pub-2305974348753248" // Replace with your AdSense Publisher ID
+          data-ad-slot="1051403388" // Replace with your AdSense ad slot ID
           data-ad-format="auto"
         ></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
