@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Hero from 'src/home/hero';
 import Features from 'src/home/features';
 import NavBar from 'src/home/navbar';
+import Script from 'next/script';
 
 const Main = styled.main`
   padding: 10px 5% 0;
@@ -35,10 +36,12 @@ const Home: NextPage = () => {
             `,
           }}
         />
-        
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305974348753248"
-     crossorigin="anonymous"></script>
-        
+        <Script 
+  async 
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305974348753248"
+  crossOrigin="anonymous"
+  strategy="afterInteractive" 
+/>        
       </Head>
 
       <Main>
