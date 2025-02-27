@@ -35,6 +35,10 @@ const Home: NextPage = () => {
             `,
           }}
         />
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305974348753248"
+     crossorigin="anonymous"></script>
+        
       </Head>
 
       <Main>
