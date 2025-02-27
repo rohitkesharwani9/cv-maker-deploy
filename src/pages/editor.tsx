@@ -24,6 +24,8 @@ const Editor: NextPage = () => {
             `,
           }}
         />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2305974348753248"
+     crossOrigin="anonymous"></script>
       </Head>
       <div id="navbar1">
           <span>
