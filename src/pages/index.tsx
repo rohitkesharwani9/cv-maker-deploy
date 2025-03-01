@@ -48,9 +48,9 @@ const Home: NextPage = () => {
         </div>
         {/* <br /> */}
         {/* Google AdSense Ad Unit */}
-      <div id='ads1'>
+      {/* <div id='ads1'> */}
       <GoogleAd />
-      </div>
+      {/* </div> */}
         <NavBar />
         <Hero />
         <Features />
