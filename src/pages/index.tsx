@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Hero from 'src/home/hero';
 import Features from 'src/home/features';
 import NavBar from 'src/home/navbar';
+import GoogleAd from "../components/GoogleAd";
 
 const Main = styled.main`
   padding: 10px 5% 0;
@@ -45,18 +46,10 @@ const Home: NextPage = () => {
             <b>CV Maker Pro</b>
           </span>
         </div>
-        <br />
+        {/* <br /> */}
         {/* Google AdSense Ad Unit */}
       <div id='ads1'>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins
-          className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-client="ca-pub-2305974348753248" // Replace with your AdSense Publisher ID
-          data-ad-slot="1051403388" // Replace with your AdSense ad slot ID
-          data-ad-format="auto"
-        ></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      <GoogleAd />
       </div>
         <NavBar />
         <Hero />
