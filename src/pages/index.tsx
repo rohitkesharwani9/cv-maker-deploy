@@ -34,13 +34,14 @@ const Sidebar = styled.aside`
   top: 40px;
   height: fit-content;
   align-self: flex-start;
-  right: 5px !important;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: 1024px) {
     display: none;
   }
 `;
-
 
 const Home: NextPage = () => {
   return (
@@ -81,7 +82,9 @@ const Home: NextPage = () => {
         </MainContent>
         
         <Sidebar>
-          <GoogleAd isVertical={true} />
+          <div style={{ position: 'sticky', top: '40px' }}>
+            <GoogleAd isVertical={true} />
+          </div>
         </Sidebar>
       </PageLayout>
     </>

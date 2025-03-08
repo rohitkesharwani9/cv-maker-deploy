@@ -14,6 +14,8 @@ const AdContainer = styled.div<AdContainerProps>`
   ${props => props.isVertical && `
     min-height: 600px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
   `}
 `;
 
@@ -37,26 +39,44 @@ interface GoogleAdProps {
 
 const GoogleAd = ({ isVertical = false }: GoogleAdProps) => {
   useEffect(() => {
-    try {
-      const pushAd = () => {
+    const initAd = () => {
+      try {
         if (typeof window !== "undefined" && window.adsbygoogle) {
           window.adsbygoogle.push({});
         }
-      };
+      } catch (e) {
+        console.error("Adsbygoogle failed to load", e);
+      }
+    };
 
-      // Small delay to ensure DOM is ready
-      setTimeout(pushAd, 50);
-    } catch (e) {
-      console.error("Adsbygoogle failed to load", e);
+    // Initial attempt
+    initAd();
+    
+    // Retry after a delay
+    const timer = setTimeout(initAd, 1000);
+    
+    // Additional retry for vertical ads
+    let verticalTimer: NodeJS.Timeout;
+    if (isVertical) {
+      verticalTimer = setTimeout(initAd, 2000);
     }
-  }, []);
+
+    return () => {
+      clearTimeout(timer);
+      if (verticalTimer) clearTimeout(verticalTimer);
+    };
+  }, [isVertical]);
 
   return (
     <AdContainer isVertical={isVertical} className="print:hidden">
       <AdLabel>Advertisement</AdLabel>
       <ins
         className="adsbygoogle"
-        style={{ display: "block" }}
+        style={{ 
+          display: "block",
+          width: isVertical ? "300px" : "100%",
+          height: isVertical ? "600px" : "auto"
+        }}
         data-ad-client="ca-pub-2305974348753248"
         data-ad-slot={isVertical ? "1051403389" : "1051403388"}
         data-ad-format={isVertical ? "vertical" : "auto"}
