@@ -6,22 +6,23 @@ import { ThemeProvider } from 'styled-components';
 
 const PageWrapper = styled.div`
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center align */
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+  margin-top: 33px;
 `;
 
 const AdContainer = styled.div`
   width: 80% !important;
   text-align: center;
-  margin-bottom: 10px;
-  margin-top: 33px;
+  margin-bottom: 20px;
   background-color: #f5f5f5;
   border: 2px solid #ddd;
   padding: 10px;
+  min-height: 100px;
 
   @media print {
-    display: none; /* Hide ads when printing */
+    display: none;
   }
 `;
 
@@ -48,17 +49,30 @@ const ResumeContainer: any = styled.div`
 `;
 
 export function Resume() {
-  const [adHeight, setAdHeight] = useState(0);
   const Template = useTemplates((state: any) => state.template);
   const zoom = useZoom((state: any) => state.zoom);
   const theme = useThemes((state: any) => state.theme);
+  const [adInitialized, setAdInitialized] = useState(false);
 
   useEffect(() => {
-    const adContainer = document.getElementById('ads');
-    if (adContainer) {
-      setAdHeight(adContainer.offsetHeight);
-    }
-  }, []);
+    // Initialize ad after component mounts
+    const initializeAd = () => {
+      if (window.adsbygoogle && !adInitialized) {
+        try {
+          window.adsbygoogle.push({});
+          setAdInitialized(true);
+        } catch (e) {
+          console.error("Ad initialization failed:", e);
+        }
+      }
+    };
+
+    // Try to initialize immediately and also after a delay
+    initializeAd();
+    const timer = setTimeout(initializeAd, 1000);
+
+    return () => clearTimeout(timer);
+  }, [adInitialized]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -67,17 +81,14 @@ export function Resume() {
         <AdContainer id="ads">
           <p style={{ fontSize: 'medium' }}><b>Internet required for full functionality</b></p>
           <p style={{ fontSize: 'medium' }}><b>Advertisement</b></p>
-          {/* Replace with your actual Google AdSense code */}
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <ins className="adsbygoogle"
-            style={{ display: 'block' }}
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
             data-ad-client="ca-pub-2305974348753248"
             data-ad-slot="1051403388"
             data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-          <script>
-            {`(adsbygoogle = window.adsbygoogle || []).push({});`}
-          </script><br />
+            data-full-width-responsive="true"
+          ></ins>
         </AdContainer>
 
         {/* Resume Section */}
