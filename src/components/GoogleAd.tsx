@@ -37,12 +37,17 @@ interface GoogleAdProps {
 
 const GoogleAd = ({ isVertical = false }: GoogleAdProps) => {
   useEffect(() => {
-    if (typeof window !== "undefined" && window.adsbygoogle) {
-      try {
-        window.adsbygoogle.push({});
-      } catch (e) {
-        console.error("Adsbygoogle failed to load", e);
-      }
+    try {
+      const pushAd = () => {
+        if (typeof window !== "undefined" && window.adsbygoogle) {
+          window.adsbygoogle.push({});
+        }
+      };
+
+      // Small delay to ensure DOM is ready
+      setTimeout(pushAd, 50);
+    } catch (e) {
+      console.error("Adsbygoogle failed to load", e);
     }
   }, []);
 

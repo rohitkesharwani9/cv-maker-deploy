@@ -66,7 +66,7 @@ export function Resume() {
         {/* Google Ads Section */}
         <AdContainer id="ads">
           <p style={{ fontSize: 'medium' }}><b>Internet required for full functionality</b></p>
-          <p>Advertisement</p>
+          <p style={{ fontSize: 'medium' }}><b>Advertisement</b></p>
           {/* Replace with your actual Google AdSense code */}
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <ins className="adsbygoogle"

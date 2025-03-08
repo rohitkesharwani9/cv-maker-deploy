@@ -12,14 +12,19 @@ const PageLayout = styled.div`
   max-width: 1400px;
   margin: auto;
   padding: 10px 20px;
+  position: relative;
 `;
 
 const MainContent = styled.main`
   flex: 1;
-  max-width: 100%;
+  max-width: calc(100% - 420px);
   padding: 10px 0;
   & > div {
     margin-bottom: 25px;
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
   }
 `;
 
