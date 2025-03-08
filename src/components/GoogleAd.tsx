@@ -10,7 +10,7 @@ const AdContainer = styled.div<AdContainerProps>`
   border: 2px solid #ddd;
   padding: 10px;
   text-align: center;
-  margin: ${props => props.isVertical ? '10px 0' : '33px 0 10px 0'};
+  margin: ${props => props.isVertical ? '10px 0' : '20px 0 10px 0'};
   ${props => props.isVertical && `
     min-height: 600px;
     width: 100%;

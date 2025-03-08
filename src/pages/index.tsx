@@ -5,6 +5,7 @@ import Hero from 'src/home/hero';
 import Features from 'src/home/features';
 import NavBar from 'src/home/navbar';
 import GoogleAd from "../components/GoogleAd";
+import { useEffect } from 'react';
 
 const PageLayout = styled.div`
   display: flex;
@@ -44,6 +45,31 @@ const Sidebar = styled.aside`
 `;
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    const initAd = () => {
+      try {
+        if (typeof window !== "undefined" && window.adsbygoogle) {
+          window.adsbygoogle.push({});
+          window.adsbygoogle.push({});  // Initialize both ads
+        }
+      } catch (e) {
+        console.error("Adsbygoogle failed to load", e);
+      }
+    };
+
+    // Initial attempt
+    initAd();
+    
+    // Retry after delays
+    const timer1 = setTimeout(initAd, 1000);
+    const timer2 = setTimeout(initAd, 2000);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -82,8 +108,23 @@ const Home: NextPage = () => {
         </MainContent>
         
         <Sidebar>
-          <div style={{ position: 'sticky', top: '40px' }}>
-            <GoogleAd isVertical={true} />
+          <div id="ads" style={{ 
+            backgroundColor: '#f5f5f5',
+            border: '2px solid #ddd',
+            padding: '10px',
+            textAlign: 'center',
+            width: '400px',
+            minHeight: '600px'
+          }}>
+            <p style={{ fontSize: 'small' }}><b>Advertisement</b></p>
+            <ins
+              className="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-2305974348753248"
+              data-ad-slot="1051403388"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
           </div>
         </Sidebar>
       </PageLayout>
