@@ -49,12 +49,12 @@ const HeroHolder = styled.div`
 `;
 
 const CTA = styled.span`
-  padding: 0.8rem 2rem;
+  padding: 1.0rem 2rem;
   background: #6c63ff;
   color: white;
   border-radius: 4px;
   text-align: center;
-  font-size: 1rem;
+  font-size: 2.2rem;
 `;
 
 const Hero: NextPage = () => {
@@ -69,7 +69,7 @@ const Hero: NextPage = () => {
         <div className="cta-holder">
           <Link href="/editor">
             <a>
-              <CTA>Get Started</CTA>
+              <CTA>Start Making Your CV</CTA>
             </a>
           </Link>
         </div>

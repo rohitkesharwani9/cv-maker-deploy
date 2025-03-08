@@ -14,8 +14,11 @@ const PageWrapper = styled.div`
 const AdContainer = styled.div`
   width: 80% !important;
   text-align: center;
-  margin-bottom: 10px; /* Space between ad and resume */
-  margin-top:33px;
+  margin-bottom: 10px;
+  margin-top: 33px;
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  padding: 10px;
 
   @media print {
     display: none; /* Hide ads when printing */
