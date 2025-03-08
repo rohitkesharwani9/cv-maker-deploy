@@ -41,6 +41,7 @@ const Sidebar = styled.aside`
   }
 `;
 
+
 const Home: NextPage = () => {
   return (
     <>

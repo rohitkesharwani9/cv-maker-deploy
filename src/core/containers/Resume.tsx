@@ -10,6 +10,10 @@ const PageWrapper = styled.div`
   align-items: center;
   width: 100%;
   margin-top: 33px;
+
+  @media print {
+    margin-top: 0;
+  }
 `;
 
 const AdContainer = styled.div`
@@ -23,6 +27,9 @@ const AdContainer = styled.div`
 
   @media print {
     display: none;
+    margin: 0;
+    padding: 0;
+    height: 0;
   }
 `;
 
@@ -44,7 +51,11 @@ const ResumeContainer: any = styled.div`
     border: none;
     overflow: inherit;
     margin: 0;
+    padding: 0;
     transform: none;
+    height: 100%;
+    page-break-before: avoid;
+    page-break-after: avoid;
   }
 `;
 
