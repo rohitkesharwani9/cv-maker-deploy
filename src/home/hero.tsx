@@ -55,6 +55,16 @@ const CTA = styled.span`
   border-radius: 4px;
   text-align: center;
   font-size: 2.2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.2rem;
+  }
 `;
 
 const Hero: NextPage = () => {

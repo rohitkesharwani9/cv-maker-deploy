@@ -108,7 +108,7 @@ const Home: NextPage = () => {
         </MainContent>
         
         <Sidebar>
-          <div id="ads" style={{ 
+          {/* <div id="ads" style={{ 
             backgroundColor: '#f5f5f5',
             border: '2px solid #ddd',
             padding: '10px',
@@ -125,7 +125,7 @@ const Home: NextPage = () => {
               data-ad-format="auto"
               data-full-width-responsive="true"
             ></ins>
-          </div>
+          </div> */}
         </Sidebar>
       </PageLayout>
     </>
