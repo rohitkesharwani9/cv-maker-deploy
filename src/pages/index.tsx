@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 
 const PageLayout = styled.div`
   display: flex;
-  gap: 20px;
+  justify-content: center;
   max-width: 1400px;
   margin: auto;
   padding: 10px 20px;
@@ -18,29 +18,10 @@ const PageLayout = styled.div`
 
 const MainContent = styled.main`
   flex: 1;
-  max-width: calc(100% - 420px);
+  max-width: 1000px;
   padding: 10px 0;
   & > div {
     margin-bottom: 25px;
-  }
-
-  @media (max-width: 1024px) {
-    max-width: 100%;
-  }
-`;
-
-const Sidebar = styled.aside`
-  width: 400px;
-  position: sticky;
-  top: 40px;
-  height: fit-content;
-  align-self: flex-start;
-  margin-right: 5px;
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: 1024px) {
-    display: none;
   }
 `;
 
@@ -49,8 +30,7 @@ const Home: NextPage = () => {
     const initAd = () => {
       try {
         if (typeof window !== "undefined" && window.adsbygoogle) {
-          window.adsbygoogle.push({});
-          window.adsbygoogle.push({});  // Initialize both ads
+          window.adsbygoogle.push({}); // Initialize single ad
         }
       } catch (e) {
         console.error("Adsbygoogle failed to load", e);
@@ -106,27 +86,6 @@ const Home: NextPage = () => {
           <Hero />
           <Features />
         </MainContent>
-        
-        <Sidebar>
-          {/* <div id="ads" style={{ 
-            backgroundColor: '#f5f5f5',
-            border: '2px solid #ddd',
-            padding: '10px',
-            textAlign: 'center',
-            width: '400px',
-            minHeight: '600px'
-          }}>
-            <p style={{ fontSize: 'small' }}><b>Advertisement</b></p>
-            <ins
-              className="adsbygoogle"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-2305974348753248"
-              data-ad-slot="1051403388"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            ></ins>
-          </div> */}
-        </Sidebar>
       </PageLayout>
     </>
   );

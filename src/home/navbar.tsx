@@ -9,7 +9,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   position: absolute;
   width: 90%;
 
@@ -36,11 +36,11 @@ const RightItemsContainer = styled.div`
 const NavBar: NextPage = () => {
   return (
     <Nav>
-      <Link href="/">
+      {/* <Link href="/">
         <a>
           <Image src="/logo.png" alt="logo" height="50px" width="50px" />
         </a>
-      </Link>
+      </Link> */}
       <RightItemsContainer>
         {/* <a className="nav-item show-web">Templates</a>
         <a className="nav-item show-web">Recommendations</a>
